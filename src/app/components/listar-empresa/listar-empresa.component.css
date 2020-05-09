@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+.card {
+  height: 100%;
+}
+
+.buttons{margin-top:8px;}
+
+.grid-button{margin-right:8px;}

@@ -1,0 +1,82 @@
+<div>
+		<form [formGroup]="formulario" (ngSubmit)="salvarEmpresa()">
+			<h3> Estabelecimento </h3>
+			<div class="row">
+			    <div class="col-md-4">
+			    	<div class="form-group ">
+			    		<label for="nome" class="control-label">Nome</label>
+			    		<input type="text" formControlName="nome" class="form-control" required>
+			    		<span class="help-block text-danger" role="alert" *ngIf="">
+			    			<ul>
+			    				<li *ngIf="">O Campo nome é obrigatório!</li>
+			    			</ul>
+			    		</span>
+			    	</div>
+			    </div>
+			</div>
+			<h3> Endereço </h3>
+			<div class="row">
+			    <div class="col-md-6">
+			    	<div class="form-group ">
+			    		<label for="logradouro" class="control-label">Logradouro</label>
+			    		<input type="text" formControlName="logradouro" class="form-control" required>
+			    		<span class="help-block text-danger" role="alert" *ngIf="">
+			    			<ul>
+			    				<li *ngIf="">O Campo Logradouro é obrigatório!</li>
+			    			</ul>
+			    		</span>
+			    	</div>
+			    </div>
+			    <div class="col-md-2">
+			    	<div class="form-group">
+			    		<label for="numero">Número</label>
+			    		<input type="text" formControlName="numero" class="form-control" required >
+			    		<span class="help-block text-danger" role="alert" *ngIf="">
+			    			<ul>
+			    				<li *ngIf="">O Campo Número é obrigatório!</li>
+			    			</ul>
+			    		</span>
+			    	</div>
+			    </div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group ">
+						<label for="cidade" class="control-label">Cidade</label>
+						<input type="text" formControlName="cidade" class="form-control" required>
+						<span class="help-block text-danger" role="alert" *ngIf="">
+							<ul>
+								<li *ngIf="">O Campo Cidade é obrigatório!</li>
+							</ul>
+						</span>
+					</div>
+				</div>
+					<div class="col-md-3">
+						<div class="form-group ">
+							<label for="bairro" class="control-label">Bairro</label>
+							<input type="text" formControlName="bairro" class="form-control" required>
+							<span class="help-block text-danger" role="alert" *ngIf="">
+								<ul>
+									<li *ngIf="">O Campo Bairro é obrigatório!</li>
+								</ul>
+							</span>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+							<label for="cep">CEP</label>
+							<input type="text" formControlName="cep" class="form-control" required >
+							<span class="help-block text-danger" role="alert" *ngIf="">
+								<ul>
+									<li *ngIf="formulario.get('cpf').hasError('required')">O Campo CEP é obrigatório!</li>
+								</ul>
+							</span>
+						</div>
+					</div>
+				</div>
+
+			<button type="submit" class="btn btn-success" [disabled] = "!formulario.valid">Cadastrar</button>					
+		</form>
+</div>
+
